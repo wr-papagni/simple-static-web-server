@@ -1,0 +1,51 @@
+<html>
+	<head>
+	   <script type="text/javascript" src="https://c.na1.visual.force.com/support/api/33.0/interaction.js"></script>
+	   <script src="https://c.na1.visual.force.com/support/console/33.0/integration.js" type="text/javascript"></script>
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	   <script type="text/javascript">
+	       var callback = function (response) {
+	       console.log(JSON.parse(response.result));
+	       alert(JSON.parse(response.result)["/reqGeneralInfo/reqDisplayName"]);
+	   } 
+
+	   //Calls getCallCenterSettings
+	   function testCall(){
+	   	sforce.interaction.cti.getCallCenterSettings(callback);
+	   }
+
+	   function setSize(){
+	   	sforce.interaction.cti.setSoftphoneWidth(parseInt(Math.random()*1000)+100);
+	   	sforce.interaction.cti.setSoftphoneHeight(parseInt(Math.random()*700)+100);
+	   }
+
+	   function isInConsole(){
+	   	sforce.interaction.isInConsole(function(response){
+	   		console.log("Is in console? "+response.result);
+	   	});
+	   }
+
+	   	var callName = null;
+	   	function testFireOnCallBegin() {
+	   		callName = "Call"+Math.random();
+            sforce.console.cti.fireOnCallBegin(callName , 'outbound' , 'label 1');
+            console.log("call start: "+callName);
+        }
+
+        function testFireOnCallEnd() {
+            //Here, 'call.1' refers to a call that is in progress.
+            sforce.console.cti.fireOnCallEnd(callName, 60, 'Set Appointment');
+            console.log("call end: "+callName);
+        }
+
+	   
+	   </script>
+	</head> 
+	<body onload="isInConsole();">
+		<h2>CTI Test</h2>
+		<button onclick="testCall();">Press</button>
+		<button onclick="setSize();">Set size</button>
+		<button onclick="testFireOnCallBegin();">Start Call</button>
+		<button onclick="testFireOnCallEnd();">Close Call</button>
+	</body>
+</html>
