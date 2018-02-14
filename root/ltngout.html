@@ -6,8 +6,11 @@
 
     <body>
         <div id="lightning"></div>
+        
+        <div id="lightning1"></div>
 
         <script type="text/javascript">
+            console.log('### 1');
             $Lightning.use(
                 "c:AccountEsercizio1",
                 function() {
@@ -16,6 +19,18 @@
                 'https://dev06-papa-dev-ed.lightning.force.com',
                 '00D58000000pG0F!AQcAQLtD4DSCIr2KQ6Kb6.1oBye2NIlEf_ZJ0bpiDAZlMDuLcrJ9YgPsOidjhixDd65P_MKliD.2EEKTYg4bwPmu79taG.86'
             );
+        </script>
+        
+         <script>
+             $Lightning.use(
+                "c:AccountEsercizio1",
+                function() {
+                    $Lightning.createComponent("c:AccountList", null, "lightning1", null);
+                },
+                'https://dev06-papa-dev-ed.lightning.force.com',
+                '00D58000000pG0F!AQcAQLtD4DSCIr2KQ6Kb6.1oBye2NIlEf_ZJ0bpiDAZlMDuLcrJ9YgPsOidjhixDd65P_MKliD.2EEKTYg4bwPmu79taG.86'
+            );
+            console.log('### 2');
         </script>
     </body>
 </html>
