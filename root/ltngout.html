@@ -1,20 +1,20 @@
 <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <head>
-        <script src="https://pierpes-df15-dev-ed.my.salesforce.com/lightning/lightning.out.js"></script>
+        <script src="https://dev06-papa-dev-ed.my.salesforce.com/lightning/lightning.out.js"></script>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.5.2/styles/salesforce-lightning-design-system.min.css" rel="stylesheet"/>
     </head>
 
     <body>
-        <div id="ltngContainer"></div>
+        <div id="lightning"></div>
 
         <script type="text/javascript">
             $Lightning.use(
-                "c:AccountManagerApp",
+                "c:AccountEsercizio1",
                 function() {
-                    $Lightning.createComponent("c:AccountManager", null, "ltngContainer", null);
+                    $Lightning.createComponent("c:AccountCreate", null, "lightning", null);
                 },
-                'https://pierpes-df15-dev-ed.lightning.force.com',
-                '00D61000000KP30!AR4AQCEpiEkBLmxcIP45M_lOmZ_HYqs1OfIEyTGXAWBzBJ.HdaQ6lu.dNPujzQoowV02Q0APuP_fPsPboC0mAqGigMunKoG6'
+                'https://dev06-papa-dev-ed.lightning.force.com',
+                '00D58000000pG0F!AQcAQLtD4DSCIr2KQ6Kb6.1oBye2NIlEf_ZJ0bpiDAZlMDuLcrJ9YgPsOidjhixDd65P_MKliD.2EEKTYg4bwPmu79taG.86'
             );
         </script>
     </body>
