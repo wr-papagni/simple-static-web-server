@@ -1,0 +1,19 @@
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <head>
+        <script src="https://pierpes-df15-dev-ed.my.salesforce.com/lightning/lightning.out.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.5.2/styles/salesforce-lightning-design-system.min.css" rel="stylesheet"/>
+    </head>
+
+    <body>
+        <div id="ltngContainer"></div>
+
+        <script type="text/javascript">
+            $Lightning.use(
+                "c:AccountManagerApp",
+                function() {
+                    $Lightning.createComponent("c:AccountManager", null, "ltngContainer", null);
+                }
+            );
+        </script>
+    </body>
+</html>
